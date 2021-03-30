@@ -6,7 +6,7 @@ class Page2 extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.pop(context, true);
         },
       ),
       body: Container(

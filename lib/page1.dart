@@ -6,9 +6,17 @@ class Page1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
+        onPressed: () async {
+          var navigationResult = await Navigator.push(
               context, new MaterialPageRoute(builder: (context) => Page2()));
+
+          if (navigationResult == true) {
+            showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                      title: Text('Navigation from back'),
+                    ));
+          }
         },
       ),
       body: Container(
